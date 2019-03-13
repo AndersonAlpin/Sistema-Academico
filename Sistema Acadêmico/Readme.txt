@@ -1,0 +1,1 @@
+Importe a base de dados .sql e mantenha o mesmo nome.
