@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+   <children>
+      <BorderPane fx:id="paneUsuario" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: black; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="menuBarTitle" mnemonicParsing="false" text="Perfil">
+                     <items>
+                        <MenuItem fx:id="btMinhaConta" mnemonicParsing="false" onAction="#minhaContaUsuario" text="Minha conta" />
+                        <MenuItem fx:id="btEditarSenha" mnemonicParsing="false" onAction="#editarSenha" text="Editar Senha" />
+                        <MenuItem mnemonicParsing="false" onAction="#sairPainelAdministrador" text="Sair" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="58.0" prefWidth="1024.0" style="-fx-background-color: black; -fx-border-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="21.0" layoutY="17.0" text="Sistema  Acadêmico de  Estudos: Construindo o seu conhecimento." textFill="#dac6b2">
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <left>
+            <VBox prefHeight="615.0" prefWidth="212.0" style="-fx-background-color: #aaa;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#painelAdministradores" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Administradores" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#painelUsuarios" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Usuários" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#painelMaterias" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Matérias" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#painelPerguntas" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Perguntas" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#painelRanking" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Ranking" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#painelLinks" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Links" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#abrirAgenda" prefHeight="300.0" prefWidth="211.0" style="-fx-background-color: #0f7e8c; -fx-border-color: white;" text="Agenda" textFill="#fff7f7">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane fx:id="stackNavegacao" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: WHITE;" styleClass="stackNavegacaoAdmin" stylesheets="@../Style/Sistema.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lbPainelNavegacao" text="Painel de navegação vazio">
+                     <font>
+                        <Font name="SimSun" size="20.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="anchorAdministradores" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: white; -fx-border-color: white;" styleClass="anchorAdministradores" stylesheets="@../Style/Sistema.css" visible="false">
+                     <children>
+                        <Label layoutX="79.0" layoutY="87.0" text="Filtro de pesquisa:" textFill="#0f7e8c" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="76.0">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbBuscarAdministradores" editable="true" layoutX="208.0" layoutY="85.0" prefHeight="25.0" prefWidth="198.0" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                        <TableView fx:id="tvAdministradores" layoutX="79.0" layoutY="113.0" prefHeight="390.0" prefWidth="327.0" style="-fx-border-color: #0f7e8c;" tableMenuButtonVisible="true" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="111.0">
+                           <columns>
+                              <TableColumn fx:id="clmNomeAdministrador" editable="false" prefWidth="75.0" text="Nome" />
+                              <TableColumn fx:id="clmSobrenomeAdministrador" editable="false" prefWidth="75.0" text="Sobrenome" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btSairAdmin" layoutX="260.0" layoutY="524.0" mnemonicParsing="false" onAction="#sairDeAdministradores" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="260.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSalvarAdmin" layoutX="482.0" layoutY="391.0" mnemonicParsing="false" onAction="#salvarNovoAdministrador" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false" AnchorPane.leftAnchor="481.0" AnchorPane.topAnchor="390.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btNovoAdmin" layoutX="104.0" layoutY="525.0" mnemonicParsing="false" onAction="#novoAdministrador" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Novo" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarNovoAdmin" layoutX="636.0" layoutY="391.0" mnemonicParsing="false" onAction="#cancelarNovoAdministrador" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.leftAnchor="636.0" AnchorPane.topAnchor="389.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lbDadosPessoaisOuCadastro" layoutX="480.0" layoutY="73.0" text="Detalhes do Administrador" textFill="#0f7e8c" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="73.0">
+                           <font>
+                              <Font name="SimSun" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane fx:id="gpAdministradores" layoutX="480.0" layoutY="103.0" prefHeight="264.0" prefWidth="549.0" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="103.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="192.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="lbNome" text="Nome:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbSobrenome" text="Sobrenome:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbEmail" text="Email:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbTelefone" text="Telefone:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbSenha" text="Senha:" visible="false" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbStatusAdministrador" text="Status:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbConfirmarSenha" text="Confirmar Senha:" visible="false" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfNome" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu nome" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfSobrenome" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu sobrenome" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfEmail" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu email" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfTelefone" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu número de telefone" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <PasswordField fx:id="tfSenha" prefHeight="40.0" prefWidth="275.0" promptText="Digite sua senha" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="tfConfirmarSenha" prefHeight="40.0" prefWidth="275.0" promptText="Confirme sua senha" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="lbMostrarTelefone" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarEmail" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarSobrenome" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmostrarNome" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarStatusAdministrador" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="tfBuscarAdministrador" onKeyPressed="#detectarAdministradorDigitado" prefHeight="25.0" prefWidth="176.0" promptText="Buscar" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                        <Button fx:id="btDesabilitarAdministradores" disable="true" layoutX="635.0" layoutY="400.0" mnemonicParsing="false" onAction="#desabilitarAdministradores" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Desabilitar" textFill="WHITE" AnchorPane.leftAnchor="635.0" AnchorPane.topAnchor="389.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btHabilitarAdministradores" disable="true" layoutX="481.0" layoutY="416.0" mnemonicParsing="false" onAction="#habilitarAdministradores" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Habilitar" textFill="WHITE" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="389.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btExcluirAdministrador" disable="true" layoutX="789.0" layoutY="417.0" mnemonicParsing="false" onAction="#excluirAdministrador" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Excluir" textFill="WHITE" AnchorPane.topAnchor="389.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorUsuarios" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: white; -fx-border-color: white;" styleClass="anchorUsuarios" stylesheets="@../Style/Sistema.css" visible="false">
+                     <children>
+                        <Label layoutX="78.0" layoutY="76.0" text="Filtro de pesquisa:" textFill="#0f7e8c" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="76.0">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbBuscarUsuario" editable="true" layoutX="209.0" layoutY="73.0" prefHeight="25.0" prefWidth="198.0" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                        <TableView fx:id="tvUsuarios" layoutX="78.0" layoutY="112.0" prefHeight="390.0" prefWidth="327.0" style="-fx-border-color: #0f7e8c;" tableMenuButtonVisible="true" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="111.0">
+                           <columns>
+                              <TableColumn fx:id="clmNomeUsuario" editable="false" prefWidth="75.0" text="Nome" />
+                              <TableColumn fx:id="clmSobrenomeUsuario" editable="false" prefWidth="75.0" text="Sobrenome" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btDesabilitarUsuario" disable="true" layoutX="256.0" layoutY="525.0" mnemonicParsing="false" onAction="#desabilitarUsuarios" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Desabilitar" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="256.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btHabilitarUsuario" disable="true" layoutX="87.0" layoutY="525.0" mnemonicParsing="false" onAction="#habilitarUsuarios" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: #0f7e8c;" text="Habilitar" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="87.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSairUsuarios" layoutX="845.0" layoutY="525.0" mnemonicParsing="false" onAction="#sairDeUsuarios" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="55.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="480.0" layoutY="73.0" text="Detalhes do Usuário" textFill="#0f7e8c" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="73.0">
+                           <font>
+                              <Font name="SimSun" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="480.0" layoutY="103.0" prefHeight="220.0" prefWidth="549.0" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="103.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="192.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nome:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Sobrenome:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Email:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Telefone:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarTelefoneUsuario" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarEmailUsuario" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarSobrenomeUsuario" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmostrarNomeUsuario" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarSItuacao" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Status:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="tfBuscarUsuario" onKeyPressed="#detectarUsuarioDigitado" prefHeight="25.0" prefWidth="176.0" promptText="Buscar" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorMaterias" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: black; -fx-border-color: white;" styleClass="anchorMaterias" visible="false">
+                     <children>
+                        <ComboBox fx:id="cbBuscarMateria" editable="true" prefHeight="25.0" prefWidth="198.0" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                        <Label text="Filtro de pesquisa:" textFill="#0f7e8c" AnchorPane.leftAnchor="76.0" AnchorPane.topAnchor="78.0">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tvMaterias" prefHeight="390.0" prefWidth="327.0" style="-fx-border-color: #0f7e8c;" tableMenuButtonVisible="true" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="111.0">
+                           <columns>
+                              <TableColumn fx:id="clmMaterias" editable="false" prefWidth="75.0" text="Materias" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btSairMaterias" layoutX="260.0" layoutY="524.0" mnemonicParsing="false" onAction="#sairDeMaterias" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="260.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btAdicionarMateria" layoutX="483.0" layoutY="170.0" mnemonicParsing="false" onAction="#salvarNovaMateria" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #0f7e8c;" text="Adicionar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="480.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btExcluirMateria" disable="true" layoutX="482.0" layoutY="261.0" mnemonicParsing="false" onAction="#excluirMateria" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #0f7e8c;" text="Excluir" textFill="WHITE" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="480.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btNovaMateria" layoutX="104.0" layoutY="525.0" mnemonicParsing="false" onAction="#novaMateria" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Nova" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarNovaMateria" layoutX="635.0" layoutY="209.0" mnemonicParsing="false" onAction="#cancelarNovaMateria" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="370.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btHabilitarMateria" disable="true" layoutX="635.0" layoutY="210.0" mnemonicParsing="false" onAction="#habilitarMateria" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #0f7e8c;" text="Habilitar" textFill="WHITE" AnchorPane.bottomAnchor="371.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btDesabilitarMateria" disable="true" layoutX="800.0" layoutY="210.0" mnemonicParsing="false" onAction="#desabilitarMateria" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #0f7e8c;" text="Desabilitar" textFill="WHITE" AnchorPane.bottomAnchor="370.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lbNovaMateria" layoutX="480.0" layoutY="73.0" text="Detalhes da Matéria" textFill="#0f7e8c" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="73.0">
+                           <font>
+                              <Font name="SimSun" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="484.0" layoutY="104.0" prefHeight="86.0" prefWidth="549.0" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="103.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="192.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nome:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmostrarNomeMateria" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfNovaMateria" prefHeight="40.0" prefWidth="275.0" promptText="Digite o nome da matéria" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="lbStatusMateria" text="Status:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmostrarStatusMateria" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="tfBuscarMateria" layoutX="208.0" layoutY="74.0" onKeyPressed="#detectarMateriaDigitada" prefHeight="25.0" prefWidth="176.0" promptText="Buscar" AnchorPane.leftAnchor="207.0" AnchorPane.topAnchor="73.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorPerguntas" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: black; -fx-border-color: white;" styleClass="anchorPerguntas" stylesheets="@../Style/Sistema.css" visible="false">
+                     <children>
+                        <Button fx:id="btListarPerguntas" layoutX="907.0" layoutY="458.0" mnemonicParsing="false" onAction="#listarPerguntas" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Lista" textFill="WHITE" AnchorPane.bottomAnchor="121.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarPergunta" layoutX="907.0" layoutY="390.0" mnemonicParsing="false" onAction="#cancelarQuestao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="186.0" AnchorPane.rightAnchor="41.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btAdicionarQuestao" layoutX="907.0" layoutY="325.0" mnemonicParsing="false" onAction="#adicionarQuestao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Adicionar" textFill="WHITE" AnchorPane.bottomAnchor="251.0" AnchorPane.rightAnchor="41.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSalvarEdicao" layoutX="907.0" layoutY="459.0" mnemonicParsing="false" onAction="#salvarEdicao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="121.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarEdicao" layoutX="907.0" layoutY="524.0" mnemonicParsing="false" onAction="#cancelarEdicao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSairDePerguntas" layoutX="395.0" layoutY="525.0" mnemonicParsing="false" onAction="#sairDeQuestao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="45.0" layoutY="57.0" text="Dificuldade:" textFill="#0f7e8c" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="17.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="sliderDificuldade" layoutX="143.0" layoutY="59.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" onDragDetected="#detectDificuldade1" onDragDone="#detectDificuldade2" onDragExited="#detectDificuldade3" prefHeight="14.0" prefWidth="166.0" snapToTicks="true" value="1.0" />
+                        <Label layoutX="45.0" layoutY="90.0" text="Valor:" textFill="#0f7e8c" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="17.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="sliderValor" layoutX="92.0" layoutY="89.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" onDragDetected="#arrastarSlider" onDragDone="#arrastarSlider1" onDragExited="#arrastarSlider2" prefHeight="38.0" prefWidth="216.0" showTickLabels="true" snapToTicks="true" value="1.0" />
+                        <Label layoutX="41.0" layoutY="23.0" text="Disciplina:" textFill="#0f7e8c" AnchorPane.leftAnchor="41.0">
+                           <font>
+                              <Font name="SimSun" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbDisciplina" layoutX="135.0" layoutY="20.0" onAction="#escolherDisciplina" prefHeight="25.0" prefWidth="245.0" promptText="Selecione" />
+                        <TextArea fx:id="taQuestao" layoutX="45.0" layoutY="165.0" prefHeight="437.0" prefWidth="353.0" promptText="Digite aqui a sua questão" style="-fx-border-color: #0f7e8c;" wrapText="true" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <Label layoutX="45.0" layoutY="141.0" text="Questão" textFill="#0f7e8c" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="465.0" layoutY="141.0" text="Alternativas" textFill="#0f7e8c">
+                           <font>
+                              <Font name="SimSun" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="tfAlternativaA" layoutX="462.0" layoutY="165.0" prefHeight="81.0" prefWidth="404.0" promptText="Alternativa A" style="-fx-border-color: #0f7e8c;" wrapText="true">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="tfAlternativaE" editable="false" layoutX="462.0" layoutY="521.0" onMouseClicked="#acaoAlternativaEclicada" prefHeight="81.0" prefWidth="404.0" promptText="Alternativa E" style="-fx-border-color: #0f7e8c;" wrapText="true">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="tfAlternativaD" editable="false" layoutX="462.0" layoutY="432.0" onMouseClicked="#acaoAlternativaDclicada" prefHeight="81.0" prefWidth="404.0" promptText="Alternativa D" style="-fx-border-color: #0f7e8c;" wrapText="true">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="tfAlternativaC" layoutX="462.0" layoutY="343.0" prefHeight="81.0" prefWidth="404.0" promptText="Alternativa C" style="-fx-border-color: #0f7e8c;" wrapText="true">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="tfAlternativaB" layoutX="462.0" layoutY="254.0" prefHeight="81.0" prefWidth="404.0" promptText="Alternativa B" style="-fx-border-color: #0f7e8c;" wrapText="true">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <RadioButton fx:id="rbE" layoutX="412.0" layoutY="546.0" mnemonicParsing="false" onMouseClicked="#rbESelecionado" text="E">
+                           <font>
+                              <Font name="MV Boli" size="16.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tGroupAlternativas" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbD" layoutX="411.0" layoutY="465.0" mnemonicParsing="false" onMouseClicked="#rbDSelecionado" text="D" toggleGroup="$tGroupAlternativas">
+                           <font>
+                              <Font name="MV Boli" size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rbC" layoutX="412.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#rbCSelecionado" text="C" toggleGroup="$tGroupAlternativas">
+                           <font>
+                              <Font name="MV Boli" size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rbB" layoutX="412.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#rbBSelecionado" text="B" toggleGroup="$tGroupAlternativas">
+                           <font>
+                              <Font name="MV Boli" size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rbA" layoutX="411.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#rbASelecionado" text="A" toggleGroup="$tGroupAlternativas">
+                           <font>
+                              <Font name="MV Boli" size="16.0" />
+                           </font>
+                        </RadioButton>
+                        <Label fx:id="lbDificuldade" layoutX="315.0" layoutY="56.0" prefHeight="20.0" prefWidth="79.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbValor" layoutX="315.0" layoutY="89.0" prefHeight="20.0" prefWidth="35.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorListarPerguntas" prefHeight="200.0" prefWidth="200.0" styleClass="anchorListarPerguntas" visible="false">
+                     <children>
+                        <TableView fx:id="tvPerguntas" layoutX="7.0" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="clmMateriaPerguntas" maxWidth="900.0" prefWidth="195.0" resizable="false" text="Matéria" />
+                            <TableColumn fx:id="clmDescricaoPerguntas" prefWidth="700.0" text="Descrição" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btExcluirQuestao" disable="true" layoutX="562.0" layoutY="222.0" mnemonicParsing="false" onAction="#excluirQuestao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Excluir" textFill="WHITE" AnchorPane.bottomAnchor="121.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btEditarQuestao" disable="true" mnemonicParsing="false" onAction="#editarQuestao" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="186.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSairListarPerguntas" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#sairListarPerguntas" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="40.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="cbFiltroPerguntas" editable="true" layoutX="867.0" layoutY="14.0" prefHeight="25.0" prefWidth="199.0" promptText="Buscar" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0" />
+                        <Label layoutX="871.0" text="Filtrar por matéria:" textFill="#0f7e8c" AnchorPane.rightAnchor="65.0">
+                           <font>
+                              <Font name="Times New Roman" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfBuscarPerguntas" layoutX="868.0" layoutY="23.0" onKeyPressed="#detectarFiltroPerguntarEnter" onMouseMoved="#detectarFiltroPerguntas" prefHeight="25.0" prefWidth="176.0" promptText="Buscar" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="23.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorRanking" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: black; -fx-border-color: white;" styleClass="anchorRanking" stylesheets="@../Style/Sistema.css" visible="false">
+                     <children>
+                        <TableView fx:id="tvRanking" layoutX="564.0" layoutY="2.0" prefHeight="613.0" prefWidth="595.0" style="-fx-background-color: white; -fx-border-color: #0f7e8c;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="1.0">
+                           <columns>
+                              <TableColumn fx:id="clmPosicao" prefWidth="78.0" text="Posição" />
+                              <TableColumn fx:id="clmNomeNoRanking" prefWidth="142.0" text="Nome" />
+                              <TableColumn fx:id="clmSobrenomeNoRanking" prefWidth="75.0" text="Sobrenome" />
+                              <TableColumn fx:id="clmPontuacaoDoDia" prefWidth="75.0" text="Pontuação do Dia" />
+                              <TableColumn fx:id="clmPontuacaoTotal" prefWidth="75.0" text="Pontuação Total" />
+                              <TableColumn fx:id="clmAcertos" prefWidth="75.0" text="Acertos" />
+                              <TableColumn fx:id="clmErros" prefWidth="75.0" text="Erros" />
+                              <TableColumn fx:id="clmIgnorados" prefWidth="75.0" text="Ignorados" />
+                              <TableColumn fx:id="clmTotalSimulados" prefWidth="75.0" text="Total Simulados" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btSairDoRanking" layoutX="922.0" layoutY="529.0" mnemonicParsing="false" onAction="#sairDoRanking" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.rightAnchor="26.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorMinhaConta" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" styleClass="anchorMinhaConta" visible="false">
+                     <children>
+                        <Button fx:id="btSairMinhaConta" layoutX="424.0" layoutY="525.0" mnemonicParsing="false" onAction="#sairMinhaConta" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Sair" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="262.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btEditarMinhaConta" layoutX="119.0" layoutY="526.0" mnemonicParsing="false" onAction="#editarMinhaConta" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Editar" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btSalvarMinhaConta" layoutX="119.0" layoutY="526.0" mnemonicParsing="false" onAction="#salvarMinhaConta" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarMinhaConta" layoutX="272.0" layoutY="526.0" mnemonicParsing="false" onAction="#cancelarMinhaConta" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="262.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lbDadosPessoais" layoutX="68.0" layoutY="56.0" text="Minha conta" textFill="#0f7e8c" AnchorPane.leftAnchor="78.0">
+                           <font>
+                              <Font name="SimSun" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="68.0" layoutY="86.0" prefHeight="264.0" prefWidth="549.0" AnchorPane.leftAnchor="78.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="192.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="lbNomeMinhaConta" text="Nome:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbSobrenomeMinhaConta" text="Sobrenome:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbEmailMinhaConta" onMouseExited="#detectarEmailExistente" text="Email:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbTelefoneMinhaConta" text="Telefone:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbSenhaMinhaConta" text="Senha:" visible="false" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfNomeMinhaConta" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu nome" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfSobrenomeMinhaConta" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu sobrenome" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfEmailMinhaConta" onMouseExited="#detectarEmailExistente" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu email" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfTelefoneMinhaConta" onKeyReleased="#tfTelefoneMinhaContaFormat" prefHeight="40.0" prefWidth="275.0" promptText="Digite seu número de telefone" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <PasswordField fx:id="tfSenhaMinhaConta" prefHeight="40.0" prefWidth="275.0" promptText="Digite sua senha" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="lbMostrarTelefoneMinhaConta" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarEmailMinhaConta" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbMostrarSobrenomeMinhaConta" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbmostrarNomeMinhaConta" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorEditarSenha" prefHeight="200.0" prefWidth="200.0" styleClass="anchorEditarSenha" visible="false">
+                     <children>
+                        <Button fx:id="btSalvarAlterarSenha" layoutX="146.0" layoutY="524.0" mnemonicParsing="false" onAction="#salvarAlterarSenha" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="104.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btCancelarAlterarSenha" layoutX="425.0" layoutY="524.0" mnemonicParsing="false" onAction="#cancelarAlterarSenha" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="262.0">
+                           <font>
+                              <Font name="SimSun" size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lbDadosPessoaisOuCadastro1" layoutX="41.0" layoutY="57.0" text="Alterar senha" textFill="#0f7e8c" AnchorPane.leftAnchor="78.0">
+                           <font>
+                              <Font name="SimSun" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="41.0" layoutY="87.0" prefHeight="138.0" prefWidth="549.0" AnchorPane.leftAnchor="78.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="192.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="lbSenhaAtual" text="Senha atual:">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbNovaSenha" text="Nova senha:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbConfirmarNovaSenha" text="Confirmar nova senha:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Times New Roman" size="18.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="tfNovaSenha" prefHeight="40.0" prefWidth="275.0" promptText="Digite sua nova senha" style="-fx-border-color: #0f7e8c;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="tfConfirmarNovaSenha" prefHeight="40.0" prefWidth="275.0" promptText="Confirme sua nova senha" style="-fx-border-color: #0f7e8c;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="tfSenhaAtual" prefHeight="40.0" prefWidth="275.0" promptText="Digite sua senha atual" style="-fx-border-color: #0f7e8c;" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="anchorLinks" layoutX="20.0" layoutY="20.0" prefHeight="597.0" prefWidth="376.0" style="-fx-background-color: black; -fx-border-color: white;" styleClass="anchorLinksAdmin" stylesheets="@../Style/Sistema.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="tvLinks" layoutX="80.0" layoutY="69.0" prefHeight="460.0" prefWidth="463.0" style="-fx-border-color: #0f7e8c;" tableMenuButtonVisible="true" AnchorPane.leftAnchor="79.0">
+               <columns>
+                  <TableColumn fx:id="clmDescricaoLink" editable="false" prefWidth="160.0" text="Descrição" />
+                  <TableColumn fx:id="clmLink" editable="false" prefWidth="235.0" text="Links" visible="false" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="btAdicionarLink" layoutX="251.0" layoutY="570.0" mnemonicParsing="false" onAction="#adicionarLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Adicionar" textFill="WHITE" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="251.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbDetalhesLink" layoutX="587.0" layoutY="69.0" text="Detalhes do Link" textFill="#0f7e8c">
+               <font>
+                  <Font name="SimSun" size="22.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="587.0" layoutY="92.0" prefHeight="130.0" prefWidth="693.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="175.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="518.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Comprtilhado por:">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Descrição:" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Link:" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbmostrarNomeUsuarioLink" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbMostrarDescricao" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbMostrarLink" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfDescricao" prefHeight="40.0" prefWidth="275.0" promptText="Digite uma descrição" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tfLink" prefHeight="40.0" prefWidth="275.0" promptText="Digite o seu link" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </GridPane>
+            <Button fx:id="btCopiarLink" layoutX="587.0" layoutY="265.0" mnemonicParsing="false" onAction="#copiarLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Copiar" textFill="WHITE">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btExcluirLink" disable="true" layoutX="883.0" layoutY="265.0" mnemonicParsing="false" onAction="#excluirLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Excluir" textFill="WHITE">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSalvarLink" layoutX="587.0" layoutY="265.0" mnemonicParsing="false" onAction="#salvarLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSalvarLinkAlterado" layoutX="587.0" layoutY="265.0" mnemonicParsing="false" onAction="#salvarLinkAlterado" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btCancelarLink" layoutX="736.0" layoutY="265.0" mnemonicParsing="false" onAction="#cancelarLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Pane layoutX="8.0" layoutY="493.0" prefHeight="58.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="17.0" text="Sistema  Acadêmico de  Estudos: Construindo o seu conhecimento." textFill="#dac6b2">
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btEditarLink" disable="true" layoutX="736.0" layoutY="265.0" mnemonicParsing="false" onAction="#editarLink" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Editar" textFill="WHITE">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <MenuBar layoutX="1.0" layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                  <items>
+                    <MenuItem fx:id="btSairDeLinks" mnemonicParsing="false" onAction="#sairDeLinks" text="Sair" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorAgenda" layoutX="30.0" layoutY="30.0" prefHeight="597.0" prefWidth="376.0" styleClass="anchorAgenda" stylesheets="@../Style/Sistema.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="tvAgenda" layoutX="79.0" layoutY="69.0" prefHeight="460.0" prefWidth="397.0" style="-fx-border-color: #0f7e8c;" tableMenuButtonVisible="true" AnchorPane.leftAnchor="78.0">
+               <columns>
+                  <TableColumn fx:id="clmDescricaoAgenda" editable="false" prefWidth="160.0" text="Descrição" />
+                  <TableColumn fx:id="clmDataAgenda" editable="false" prefWidth="235.0" text="Data" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="btAdicionarAgenda" layoutX="217.0" layoutY="571.0" mnemonicParsing="false" onAction="#adicionarAgenda" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Adicionar" textFill="WHITE" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="217.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="545.0" layoutY="69.0" text="Detalhes" textFill="#0f7e8c" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="69.0">
+               <font>
+                  <Font name="SimSun" size="22.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="545.0" layoutY="92.0" prefHeight="130.0" prefWidth="693.0" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="92.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="175.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="518.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Descrição:">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Data:" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbDescricaoAgenda" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbDataAgenda" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfAgenda" prefHeight="40.0" prefWidth="275.0" promptText="Descreva o seu evento" style="-fx-border-color: #0f7e8c;" visible="false" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="calendarAgenda" prefHeight="36.0" prefWidth="205.0" style="-fx-background-color: #0f7e8c;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Button fx:id="btExcluirAgenda" disable="true" layoutX="831.0" layoutY="265.0" mnemonicParsing="false" onAction="#excluirAgenda" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Excluir" textFill="WHITE" AnchorPane.leftAnchor="688.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSalvarAgenda" layoutX="545.0" layoutY="265.0" mnemonicParsing="false" onAction="#salvarAgenda" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSalvarAgendaAlterada" layoutX="545.0" layoutY="265.0" mnemonicParsing="false" onAction="#salvarAgendaAlterada" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Salvar" textFill="WHITE" visible="false" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btCancelarAgenda" layoutX="688.0" layoutY="265.0" mnemonicParsing="false" onAction="#cancelarAgenda" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.leftAnchor="688.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btEditarAgenda" disable="true" layoutX="688.0" layoutY="265.0" mnemonicParsing="false" onAction="#editarAgenda" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #0f7e8c;" text="Editar" textFill="WHITE" AnchorPane.leftAnchor="545.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="SimSun" size="20.0" />
+               </font>
+            </Button>
+            <MenuBar layoutX="13.0" layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Menu">
+                     <items>
+                        <MenuItem fx:id="btSairAgenda" mnemonicParsing="false" onAction="#sairDeAgenda" text="Sair" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Pane prefHeight="58.0" prefWidth="200.0" style="-fx-background-color: black; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="17.0" text="Sistema  Acadêmico de  Estudos: Construindo o seu conhecimento." textFill="#dac6b2">
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

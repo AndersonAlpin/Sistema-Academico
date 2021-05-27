@@ -1,0 +1,75 @@
+
+/*
+ * Empty Stylesheet file.
+ */
+
+.Login {
+    -fx-background-image:url('../Images/LoginCadas.jpg');
+}
+.PaneLogin{
+    -fx-background-color: black;
+}
+.Cadastro{
+}
+.PaneCadastro{
+    -fx-background-image:url('../Images/LoginCadas.jpg');
+}
+.buttonMaximizar{
+}
+.anchorUsuarios{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorAdministradores{
+    -fx-background-image:url('../Images/telas.png');
+}
+.stackNavegacaoAdmin{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorMaterias{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorPerguntas{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorRanking{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorMinhaConta{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorEditarSenha{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorLinksAdmin{
+    -fx-background-image:url('../Images/telaMaior.png');
+}
+.anchorAgenda{
+    -fx-background-image:url('../Images/telaMaior.png');
+}
+.stackNavegacaoUsuario{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorEdicaoSimulado{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorListarMaterias{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorMinhaContaUsuario{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorEditarSenhaUsuario{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorSimulado{
+    -fx-background-image:url('../Images/telaMaior.png');
+}
+.anchorLinksUsuario{
+    -fx-background-image:url('../Images/telaMaior.png');
+}
+.anchorListarPerguntas{
+    -fx-background-image:url('../Images/telas.png');
+}
+.anchorMeuHistorico{
+    -fx-background-image:url('../Images/telas.png');
+}
