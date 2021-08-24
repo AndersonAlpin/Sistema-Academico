@@ -33,8 +33,6 @@ Poderia ser ocultada <br>
 ![Captura de Tela (469)](https://user-images.githubusercontent.com/48166236/119859100-72599e80-beeb-11eb-8726-25e410717388.png)
 ### Ranking
 ![Captura de Tela (470)](https://user-images.githubusercontent.com/48166236/119859163-830a1480-beeb-11eb-8081-29e88a9247b2.png)
-### Agenda
-![Captura de Tela (471)](https://user-images.githubusercontent.com/48166236/119859164-83a2ab00-beeb-11eb-96bc-7c145946ccd4.png)
 ## Aluno
 ### Home
 ![Captura de Tela (454)](https://user-images.githubusercontent.com/48166236/119855374-3b35be00-bee8-11eb-8154-f2cfbd5ff5d9.png)
@@ -48,6 +46,7 @@ Poderia ser ocultada <br>
 ![Captura de Tela (458)](https://user-images.githubusercontent.com/48166236/119858250-ae403400-beea-11eb-8791-32b8243f709c.png)
 ### Compartilhamento de links
 ![Captura de Tela (459)](https://user-images.githubusercontent.com/48166236/119858521-ec3d5800-beea-11eb-91c9-cb1ecd7d9cd8.png)
+![Captura de Tela (471)](https://user-images.githubusercontent.com/48166236/119859164-83a2ab00-beeb-11eb-96bc-7c145946ccd4.png)
 ### Agenda
 ![Captura de Tela (460)](https://user-images.githubusercontent.com/48166236/119858523-ecd5ee80-beea-11eb-8842-5bf4328bf630.png)
 
